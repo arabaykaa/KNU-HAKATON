@@ -1,5 +1,5 @@
 import { Box, Typography } from "@mui/material"
-import Home from "src/components/screens/home/Home"
+import { Home } from "src/widgets"
 
 export const Main = () => {
     return (

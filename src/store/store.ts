@@ -1,7 +1,8 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
+import { imageApiSlice } from "./slices/imageApiSlice";
 
 const rootReducer = combineReducers({
-  api: {},
+  [imageApiSlice.reducerPath]: imageApiSlice.reducer,
 });
 
 export const store = configureStore({

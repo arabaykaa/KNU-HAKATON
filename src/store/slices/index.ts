@@ -1,0 +1,1 @@
+export { useCreateTextByImageMutation } from "./imageApiSlice";
