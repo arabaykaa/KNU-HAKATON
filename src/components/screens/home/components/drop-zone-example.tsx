@@ -1,27 +1,32 @@
 import React, { useState } from "react";
-import Button from "@mui/material/Button";
+import { Box } from "@mui/material";
 import Uploader from "src/components/ui/uploader";
 
-const Dropzone: React.FC = () => {
+interface IProps {
+  register: unknown
+}
+
+const Dropzone: React.FC = ({ register }: IProps) => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [files, setFiles] = useState<any[]>([]);
 
-  const handleSave = () => {
-    // Saving files to state for further use and closing Modal.
-    console.log(files);
-    setFiles(files);
-  };
+  // const handleSave = () => {
+  //   // Saving files to state for further use and closing Modal.
+  //   // console.log(files);
+  //   setFiles(files);
+  // };
 
   const handleOnChange = (files: File[]) => {
     // Saving files to state for further use and closing Modal.
-    console.log(files);
+    // console.log(files);
     setFiles(files);
   };
 
   return (
-    <div>
-      <Button onClick={handleSave}>Добавить файлы</Button>
+    <Box sx={{ width: "100%", padding: "1rem" }}>
+      {/* <Button onClick={handleSave}>Добавить файлы</Button> */}
       <Uploader onUpload={handleOnChange} />
-    </div>
+    </Box>
   );
 };
 
